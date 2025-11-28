@@ -1,0 +1,548 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda SMP</title>
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e3f2ff, #ffffff);
+    font-family: Arial, sans-serif;
+}
+
+        /* TOP BAR */
+        .topbar {
+            background: #add8e6;
+            padding: 8px 40px;
+            color: navy;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #110586;
+            padding: 12px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .brand span {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        /* HERO */
+        .hero {
+            background-image : url('gedung smp.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: orange;
+        }
+        .hero h1 {font-size: 52px; font-weight: 800;}
+        .hero p {font-size: 18px; max-width: 600px;}
+        .hero .btn-group {margin-top: 20px;}
+        .btn-orange {
+            background: #ff7b00;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        /* CARD 3 MENU */
+        .menu-3card {
+            margin-top: -60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 0 40px;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .menu-card h3 {
+            margin-top: 15px;
+        }
+
+        .menu-card p {
+            padding: 0 15px;
+            color: #444;
+            min-height: 65px;
+        }
+
+        .btn-orange {
+            background: #110586;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        /* SECTIONS */
+        .section {padding: 60px 40px; max-width: 1200px; margin: auto;}
+        .section h2 {text-align: center; margin-bottom: 25px; font-size: 30px;}
+
+        /* GRID LIST */
+        .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px;}
+        .grid .card {background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);} 
+
+        /* FOOTER */
+        footer {background:#1a1a1a; color: white; text-align: center; padding: 20px;}
+        a.section-link {text-decoration:none; color:#ff7b00; font-weight:bold;}
+	}
+
+	 .table-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+ .table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;         
+    max-width: 900px;    
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: Arial;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #add8e6;
+    font-weight: bold;
+  }
+
+.sejarah-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #add8e6;
+    margin: 40px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.sejarah-img {
+    width: 40%;            
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.sejarah-text {
+    width: 60%;
+    font-family: Arial;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px)
+{
+
+    .sejarah-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sejarah-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .sejarah-text {
+        width: 90%;
+    }
+}
+
+/* OPTIONAL: container universal */
+.section-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.galeri-container {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 FOTO KE SAMPING */
+    gap: 20px;
+    justify-items: center;
+}
+
+.galeri-item img {
+    width: 100%;
+    max-width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+    .galeri-container {
+        grid-template-columns: repeat(2, 1fr); /* HP jadi 2 kolom */
+    }
+}
+
+.footer {
+    background: #110586;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 45%;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Footer teks paling bawah */
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar"> • Website Resmi</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="brand">
+        <img src="logo1.jpeg">
+        <span>SMPN 13 TANGERANG</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#visi">Visi</a>
+        <a href="#misi">Misi</a>
+        <a href="#sejarah">Sejarah</a>
+        <a href="#ekskul">Ekstrakurikuler</a>
+        <a href="#prestasi">Prestasi</a>
+        <a href="#guru">Guru</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>SELAMAT DATANG DI SMPN 13 TANGERANG</h1>
+    <p>Mencetak generasi berprestasi, berkarakter, dan berwawasan global.</p>
+    <div class="btn-group">
+        <a href="#visi" class="btn-orange">Visi Misi</a>
+        <a href="#ekskul" class="btn-orange">Ekstrakurikuler</a>
+    </div>
+</div>
+
+<!-- 3 CARD MENU -->
+<div class="menu-3card">
+    <div class="menu-card">
+        <img src="profil.png">
+        <h3>Profil Sekolah</h3>
+        <p>Informasi Lengkap Tentang Sejarah dan Identitas Sekolah.</p>
+        <a class="btn-orange" href="#sejarah">Lihat</a>
+    </div>
+
+    <div class="menu-card">
+        <img src="guru.jpeg">
+        <h3>Daftar Guru</h3>
+        <p>Daftar-Daftar Nama Guru Beserta Mata Pelajarannya.</p>
+        <a class="btn-orange" href="#guru">Lihat</a>
+    </div>
+
+    <div class="menu-card">
+        <img src="prestasi.jpeg">
+        <h3>Prestasi</h3>
+        <p>Pencapaian Siswa Dalam Berbagai Bidang.</p>
+        <a class="btn-orange" href="#prestasi">Lihat</a>
+    </div>
+</div>
+
+<!-- VISI MISI -->
+<section id="visi" class="section">
+    <h2>Visi Sekolah</h2>
+    <div class="grid">
+    <div class="card">Menjadi organisasi siswa yang inovatif, berwawasan global, serta berkarakter unggul dalam membangun lingkungan sekolah yang harmonis, inspiratif, dan berdaya saing tinggi. </div>
+</section>
+
+<section id="misi" class="section">
+    <h2>Misi Sekolah</h2>
+    <div class="grid">
+        <div class="card">Membentuk peserta didik yang beriman, berakhlak mulia, dan berbudi pekerti luhur.</div>
+        <div class="card">Melaksanakan proses pembelajaran yang efektif dan efisien serta bimbingan secara maksimal.</div>
+        <div class="card">Meningkatkan kinerja guru dan staf untuk menciptakan lingkungan belajar yang kondusif.</div>
+        <div class="card">Menciptakan kepribadian peserta didik yang terampil dan disiplin tinggi.</div>
+        <div class="card">Mewujudkan sarana dan prasarana sekolah yang representatif dan ramah lingkungan.</div>
+        <div class="card">Membangun hubungan yang harmonis dengan warga sekolah, masyarakat, dan pemerintah</div>
+    </div>
+</section>
+
+<section id="sejarah" class="section">
+    <h2 style="text-align:center; margin-top:60px;">Sejarah</h2>
+
+    <div class="sejarah-card">
+
+        <img src="sekolah.jpg" class="sejarah-img">
+
+        <div class="sejarah-text">
+            SMP Negeri 13 Kota Tangerang berdiri pada 20 November 1985 berdasarkan Keputusan Menteri Pendidikan dan Kebudayaan Nomor 0594/0/1985. Pendirian sekolah ini dilakukan untuk memenuhi kebutuhan pendidikan menengah pertama di wilayah Kota Tangerang yang terus berkembang.
+
+Pada awal operasionalnya, fasilitas sekolah masih terbatas, namun proses belajar mengajar tetap berjalan dengan dukungan tenaga pendidik yang berdedikasi. Seiring perkembangan waktu, sarana dan kualitas pembelajaran terus ditingkatkan hingga akhirnya sekolah memperoleh Akreditasi A dari BAN-S/M pada tahun 2018.
+
+Hingga kini, SMPN 13 Kota Tangerang terus berkomitmen memberikan pendidikan yang berkualitas, berkarakter, dan berorientasi pada prestasi bagi seluruh peserta didiknya.
+        </div>
+
+    </div>
+</section> 
+
+<!-- EKSKUL -->
+<section id="ekskul" class="section">
+    <h2>Ekstrakurikuler</h2>
+    <div class="grid">
+        <div class="card">Pramuka</div>
+        <div class="card">Paskibra</div>
+        <div class="card">Futsal</div>
+        <div class="card">Tari Tradisional</div>
+        <div class="card">PMR</div>
+        <div class="card">Pencak silat</div>
+        <div class="card">Rohis</div>
+        <div class="card">Basket</div>
+        <div class="card">Mading</div>
+        <div class="card">Videografi</div>
+        <div class="card">Marchingband</div>
+        <div class="card">Konsera</div>
+    </div>
+</section>
+
+<!-- PRESTASI -->
+<section id="prestasi" class="section">
+    <h2>Prestasi</h2>
+    <div class="grid">
+        <div class="card">Best Achievement Sekolah Sehat</div>
+        <div class="card">Medali Perak KOPSI 2021</div>
+        <div class="card">Juara 1 Festival Lingkungan</div>
+        <div class="card">Juara 1 Paskibra</div>
+        <div class="card">Juara 2 Perbasi Club Basket Putra</div>
+        <div class="card">Juara 2 KOSN Karate</div>
+        <div class="card">Juara 2 FLS2N Gitar</div>
+        <div class="card">Juara 3 Porseni SMP tingkat Kota</div>
+    </div>
+</section>
+
+<!-- GURU -->
+<section id="guru" class="section">
+    <h2>Daftar Guru</h2>
+    <div class="grid">
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Guru</th>
+                    <th>Mata Pelajaran</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>IBU NIA</td>
+                    <td>PPKN</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>PAK IIP</td>
+                    <td>IPS</td>
+		</tr>
+                <tr>
+                    <td>3</td>
+                    <td>IBU SULASTRI</td>
+                    <td>IPA</td>
+		</tr>
+                <tr>
+                    <td>3</td>
+                    <td>PAK YUSFA</td>
+                    <td>AGAMA</td>
+		</tr>
+                <tr>
+                    <td>4</td>
+                    <td>IBU AFI</td>
+                    <td>SENI BUDAYA</td>
+		</tr>
+                <tr>
+                    <td>5</td>
+                    <td>PAK AIDA</td>
+                    <td>MATEMATIKA</td>
+		</tr>
+                <tr>
+                    <td>6</td>
+                    <td>MISS YUNI</td>
+                    <td>BAHASA INGGRIS</td>
+		</tr>
+                <tr>
+                    <td>7</td>
+                    <td>PAK ROSLAN</td>
+                    <td>BAHASA INDONESIA</td>
+		</tr>
+                <tr>
+                    <td>8</td>
+                    <td>IBU ROSMAWATI</td>
+                    <td>PRAKARYA</td>
+		</tr>
+                <tr>
+                    <td>9</td>
+                    <td>PAK DARU</td>
+                    <td>INFORMATIKA</td>
+		</tr>
+                <tr>
+                    <td>10</td>
+                    <td>PAK TEDI</td>
+                    <td>PJOK</td>
+		</tr>
+            </table>
+        </div>
+    </div>
+</section> <!-- 🔥 INI YANG HILANG DI PUNYA KAMU -->
+
+<!-- GALERI -->
+<section id="galeri" class="section"> 
+    <h2 style="text-align:center;">Galeri Foto</h2>
+
+    <div class="galeri-container">
+        <div class="galeri-item"><img src="eco.png"></div>
+        <div class="galeri-item"><img src="duduk.png"></div>
+        <div class="galeri-item"><img src="baca.png"></div>
+        <div class="galeri-item"><img src="9c.jpeg"></div>
+        <div class="galeri-item"><img src="tampil.png"></div>
+        <div class="galeri-item"><img src="bakat.png"></div>
+        <div class="galeri-item"><img src="podcast.png"></div>
+        <div class="galeri-item"><img src="kls1.jpeg"></div>
+        <div class="galeri-item"><img src="kls2.jpeg"></div>
+        <div class="galeri-item"><img src="kls3.jpeg"></div>
+        <div class="galeri-item"><img src="kls4.jpeg"></div>
+        <div class="galeri-item"><img src="kls5.jpeg"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Tentang Galasta</h3>
+            <p>SMP Negeri 13 Kota Tangerang merupakan lembaga pendidikan menengah pertama yang berdiri sejak tahun 1985. Sekolah ini berkomitmen menyelenggarakan pendidikan yang berkualitas, berkarakter, dan berorientasi pada prestasi. Dengan tenaga pendidik profesional dan lingkungan belajar yang kondusif, SMPN 13 terus berupaya mencetak peserta didik yang kompeten, berdisiplin, dan siap menghadapi perkembangan zaman.S</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Hubungi Kami</h3>
+            <p>Alamat:Kawasan Pendidikan Cikokol
+Jl. Perintis Kemerdekaan I/3 Babakan Kota Tangerang Kode Pos : 15118</p>
+            <p>Telepon: (021) 5531890</p>
+            <p>Email: info@smpn13tangerang.sch.id</p>
+            <p>Youtube: SMPN 13 Kota Tangerang Official Account / SMP Negeri 13 Tangerang</p>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">© 2025 SMPN 13 TANGERANG — Semua Hak Dilindungi</p>
+</footer>
+
+</body>
+</html>
